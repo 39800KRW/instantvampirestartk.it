@@ -1,0 +1,9 @@
+# Ignore artifacts:
+coverage
+
+.yarn
+.pnp.*
+node_modules
+.next
+.wrangler
+.idea
