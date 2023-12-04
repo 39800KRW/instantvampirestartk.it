@@ -9,6 +9,8 @@ import { Button, ButtonGroup } from '@nextui-org/button';
 import { Link } from '@nextui-org/link';
 
 export default function Home() {
+  const target = new Date(new Date().setMinutes(new Date().getMinutes() + 5));
+
   return (
     <>
       {/* Canvas */}
@@ -49,11 +51,7 @@ export default function Home() {
             <span>방송 종료</span>
             <span className="material-icons animate-spin">dark_mode</span>
             <span className="tabular-nums">
-              <CountDownTimer
-                target={
-                  new Date(new Date().setMinutes(new Date().getMinutes() + 1))
-                }
-              />
+              <CountDownTimer target={target} />
             </span>
           </div>
         </div>
