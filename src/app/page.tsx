@@ -27,7 +27,7 @@ const Model = (props: ThreeElements['mesh']) => {
     return <primitive ref={ref} {...props} object={scene} dispose={null} />
 }
 
-export default () => {
+export default function Home() {
     const purchase = () => {
       if (typeof window !== 'undefined') {
         location.href = 'https://store.steampowered.com/app/2325460/EZ2ON_REBOOT__R__ENDLESS_CIRCULATION/';
