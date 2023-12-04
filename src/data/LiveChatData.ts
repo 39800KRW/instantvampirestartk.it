@@ -5,7 +5,7 @@ export interface LiveChatDataInterface {
 
 const LiveChatData: LiveChatDataInterface[] = [
   {
-    phone: '99**',
+    phone: '9903',
     message: '저희 아이가 좋아해요 ^^',
   },
   {

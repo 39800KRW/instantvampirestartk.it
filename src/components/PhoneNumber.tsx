@@ -5,11 +5,11 @@ export interface PhoneNumberProps {
 
 export default function PhoneNumber({ title, number }: PhoneNumberProps) {
   return (
-    <div className="max-sm:hidden md:flex flex-row items-center mx-1">
-      <span className="font-semibold text-lg w-fit overflow-hidden whitespace-nowrap text-ellipsis mx-1">
+    <div className="hidden md:flex flex-row items-center mx-2">
+      <span className="text-zinc-600 w-fit overflow-hidden whitespace-nowrap text-ellipsis mx-2">
         {title}
       </span>
-      <span className="text-lg w-fit overflow-hidden whitespace-nowrap text-ellipsis mx-1">
+      <span className="font-semibold text-xl w-fit overflow-hidden whitespace-nowrap text-ellipsis mx-2">
         {number}
       </span>
     </div>

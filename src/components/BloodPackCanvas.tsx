@@ -7,7 +7,7 @@ import { Suspense } from 'react';
 
 export default function BloodPackCanvas() {
   return (
-    <Canvas className="cursor-grab">
+    <Canvas className="cursor-grab z-0">
       <Suspense fallback={null}>
         <ambientLight intensity={5} />
         <pointLight position={[0, 0, 0]} />
