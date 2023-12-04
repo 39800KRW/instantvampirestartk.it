@@ -2,7 +2,7 @@
 
 import { Chip, Button, CircularProgress, Sheet, Stack, Typography } from "@mui/joy"
 import { Canvas, ThreeElements, useFrame } from "@react-three/fiber";
-import { FC, ReactNode, Suspense, useRef } from "react";
+import { FC, ReactNode, Suspense, useEffect, useRef, useState } from "react";
 import { useGLTF, OrbitControls } from '@react-three/drei';
 import { Mesh } from "three";
 import LiveTalk from "@/components/LiveTalk";
@@ -12,6 +12,8 @@ import ProductInfo from "@/components/ProductInfo";
 import PhoneNumber from "@/components/PhoneNumber";
 import { AddShoppingCart, Copyright } from "@mui/icons-material";
 import { useRouter } from "next/navigation";
+import CountDownTimer from "@/components/CountDownTimer";
+import LiveChatData, { LiveChatDataInterface } from "@/data/LiveChatData";
 
 const Model = (props: ThreeElements['mesh']) => {
     // This reference gives us direct access to the THREE.Mesh object
@@ -36,6 +38,31 @@ export default function Home() {
         location.href = 'https://store.steampowered.com/app/2325460/EZ2ON_REBOOT__R__ENDLESS_CIRCULATION/';
       }
     }
+
+    const [liveChat, setLiveChat] = useState<LiveChatDataInterface>(LiveChatData[0]);
+    const [liveChatIdx, setLiveChatIdx] = useState<number>(0);
+    const [intervalId, setIntervalId] = useState<NodeJS.Timeout>();
+    
+    useEffect(() => {
+      if (!intervalId) {
+        setIntervalId(
+          setTimeout(() => {
+            setLiveChatIdx(liveChatIdx + 1);
+            updateLiveChat(liveChatIdx + 1);
+          }, 5000)
+        );
+      }
+
+      return () => {
+        if (intervalId) {
+          clearInterval(intervalId);
+        }
+      }
+    });
+
+    const updateLiveChat = (idx: number) => {
+      setLiveChat(LiveChatData[idx]);
+    }
   
     return <>
         <Canvas style={{ cursor: 'grab', zIndex: 0, position: 'absolute', top: 0, left: 0, width: '100dvw', height: '100dvh' }}>
@@ -51,11 +78,11 @@ export default function Home() {
         <div style={{zIndex: 1}}>
             <Stack sx={{ padding: '2.5rem' }}>
                 <Stack direction="row" gap={2} >
-                    <Stack direction="column" sx={{height: 'calc(100dvh - 7rem)'}} >
+                    <Stack direction="column" sx={{ width: '350px', maxWidth: '30dvw', height: 'calc(100dvh - 7rem)'}} >
                       <ProductInfo />
                       <OutOfStockAlert />
                       <ProductExplain />
-                      <LiveTalk />
+                      <LiveTalk phone={liveChat.phone} message={liveChat.message} />
                     </Stack>
                 </Stack>
             </Stack>
@@ -71,13 +98,15 @@ export default function Home() {
                                       <PhoneNumber title="상담원" number="070-397-9903" />
                                     </Stack>
                                     
-                                    <Typography sx={{ flexGrow: 1, overflow: 'hidden', textOverflow: 'ellipsis' }}>필수 영양소 다량 함유, 철분 다량 함유, 딸기향 합성착향료 함유</Typography>
+                                    <Typography sx={{ flexGrow: 1, whiteSpace: 'nowrap', flexShrink: 1, textOverflow: 'ellipssis', overflow: 'hidden', width: 'fit-content', maxWidth: 'calc(100dvw - 14rem)' }}>필수 영양소 다량 함유, 철분 다량 함유, 딸기향 합성착향료 함유</Typography>
                                 </Stack>
                         </Stack>
                         <Stack direction="row" alignItems="center" gap={1} sx={{ flexShrink: 0 }}>
                             <Typography>방송 종료</Typography>
                             <CircularProgress size="sm" color="danger" />
-                            <Typography>00:00</Typography>
+                            <Typography>
+                              <CountDownTimer target={new Date(new Date().setMinutes(new Date().getMinutes() + 1))} />
+                            </Typography>
                         </Stack>
                     </Stack>
                 </Sheet>
