@@ -28,6 +28,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@edge-runtime/primitives@npm:4.0.5":
+  version: 4.0.5
+  resolution: "@edge-runtime/primitives@npm:4.0.5"
+  checksum: 9b853b097307620de4b1b8ac34185a78df8211080ef5ba58ab2728696c683fadd09471975444b9863c490695fc264f5c5a415ffb4f76cdddb8b8366d5dfab5cc
+  languageName: node
+  linkType: hard
+
+"@edge-runtime/types@npm:^2.2.7":
+  version: 2.2.7
+  resolution: "@edge-runtime/types@npm:2.2.7"
+  dependencies:
+    "@edge-runtime/primitives": "npm:4.0.5"
+  checksum: dc24d83736390d00c6c6aec68fa80eed058a715a09f3506a1b8ca24bf7e7a89df8c3ba08ec20eb15bd4ea5cc00f115a858d93f19dd6e2da64fb9f5ebcc0fd101
+  languageName: node
+  linkType: hard
+
 "@emotion/is-prop-valid@npm:^0.8.2":
   version: 0.8.8
   resolution: "@emotion/is-prop-valid@npm:0.8.8"
@@ -4982,6 +4998,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "instantvampirestartk.it@workspace:."
   dependencies:
+    "@edge-runtime/types": "npm:^2.2.7"
     "@nextui-org/react": "npm:^2.2.9"
     "@react-three/drei": "npm:^9.90.0"
     "@react-three/fiber": "npm:^8.15.12"
