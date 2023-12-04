@@ -30,8 +30,8 @@ export default function RootLayout({
               `}</style>
               <Stack justifyContent="center" alignItems="center" sx={{ height: '100dvh' }}>
                 <Stack direction="column" justifyContent="center" alignItems="center" gap={2}>
-                  <CircularProgress size="lg" />
-                  <Typography level="body-md">Loading PacketStream Dashboard...</Typography>
+                  <CircularProgress size="lg" color="danger" />
+                  <Typography level="body-md">모델 불러오는 중...</Typography>
                 </Stack>
               </Stack>
           </div>}>

@@ -24,9 +24,6 @@ export default function Acknowledgement() {
                     <Typography level="body-md">를 참고바랍니다.</Typography>
                 </Stack>
             </Stack>
-
-
-
         </Stack>
     </>
 };
