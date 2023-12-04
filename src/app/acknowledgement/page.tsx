@@ -1,32 +1,31 @@
-import NextLink from '@/components/NextLink';
-import { Stack, Typography } from '@mui/joy';
+import { Link } from '@nextui-org/link';
 
 export default function Acknowledgement() {
   return (
-    <>
-      <Stack direction="column" gap={4} sx={{ padding: '1rem' }}>
-        <Stack direction="column" gap={2}>
-          <Typography level="h1">저작권</Typography>
-          <Typography level="body-md">
-            이 웹페이지는 다음을 이용하여 제작되었습니다.
-          </Typography>
-        </Stack>
+    <div className={'flex flex-col gap-4 p-4'}>
+      <div className={'flex flex-col gap-2'}>
+        <h1 className={'text-2xl font-bold'}>저작권</h1>
+        <p>이 웹페이지는 다음을 이용하여 제작되었습니다.</p>
+      </div>
 
-        <Stack direction="column" gap={2}>
-          <Stack direction="row" gap={1} alignItems="baseline">
-            <Typography level="title-md">혈액팩 3D 모델</Typography>
-            <Typography level="body-md">
-              SketchFab - Blood Pack (Low-poly PBR)
-            </Typography>
-            <NextLink href="https://sketchfab.com/3d-models/blood-pack-low-poly-pbr-e8122f4880df4286baa08ca79eae1253#download">
-              웹페이지
-            </NextLink>
-            <Typography level="body-sm">
-              Distributed under CC-BY 4.0 License
-            </Typography>
-          </Stack>
-        </Stack>
-      </Stack>
-    </>
+      <div className={'flex flex-col gap-2'}>
+        <div className={'flex align-baseline gap-1'}>
+          <p className={'font-semibold'}>혈액팩 3D 모델</p>
+          <p className={''}>SketchFab - Blood Pack (Low-poly PBR)</p>
+          <Link
+            href={
+              'https://sketchfab.com/3d-models/blood-pack-low-poly-pbr-e8122f4880df4286baa08ca79eae1253#download'
+            }>
+            웹페이지
+          </Link>
+          <p className={'text-sm'}>Distributed under CC-BY 4.0 License</p>
+        </div>
+        <div className={'flex align-baseline gap-1'}>
+          <p className={'font-semibold'}>G-Market Sans OTF</p>
+          <p className={''}></p>
+          <Link href={'https://corp.gmarket.com/fonts/'}>웹페이지</Link>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -1,40 +1,17 @@
-import { Stack, Typography } from '@mui/joy';
-import { FC } from 'react';
-
-const PhoneNumber: FC<{
+export interface PhoneNumberProps {
   title: string;
   number: string;
-}> = ({ title, number }) => {
-  return (
-    <Stack
-      direction="row"
-      gap={2}
-      alignItems="center"
-      sx={{
-        display: { xs: 'none', md: 'flex' },
-      }}>
-      <Typography
-        level="title-lg"
-        sx={{
-          width: 'fit-content',
-          overflow: 'hidden',
-          whiteSpace: 'nowrap',
-          textOverflow: 'ellipsis',
-        }}>
-        {title}
-      </Typography>
-      <Typography
-        level="body-lg"
-        sx={{
-          width: 'fit-content',
-          overflow: 'hidden',
-          whiteSpace: 'nowrap',
-          textOverflow: 'ellipsis',
-        }}>
-        {number}
-      </Typography>
-    </Stack>
-  );
-};
+}
 
-export default PhoneNumber;
+export default function PhoneNumber({ title, number }: PhoneNumberProps) {
+  return (
+    <div className="max-sm:hidden md:flex flex-row items-center mx-1">
+      <span className="font-semibold text-lg w-fit overflow-hidden whitespace-nowrap text-ellipsis mx-1">
+        {title}
+      </span>
+      <span className="text-lg w-fit overflow-hidden whitespace-nowrap text-ellipsis mx-1">
+        {number}
+      </span>
+    </div>
+  );
+}

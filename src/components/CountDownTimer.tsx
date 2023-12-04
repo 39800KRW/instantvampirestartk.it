@@ -1,4 +1,6 @@
-import { FC, ReactNode, useEffect, useState } from 'react';
+'use client';
+
+import { FC, useCallback, useEffect, useState } from 'react';
 
 interface CalculatedResult {
   hours: number;
@@ -9,9 +11,13 @@ interface CalculatedResult {
 const CountDownTimer: FC<{
   target: Date;
 }> = ({ target }) => {
-  const calculateTimeLeft = (): CalculatedResult | {} => {
+  const calculateTimeLeft = useCallback((): CalculatedResult => {
     const difference = +new Date(target) - +new Date();
-    let timeLeft = {};
+    let timeLeft = {
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+    };
 
     if (difference > 0) {
       timeLeft = {
@@ -22,49 +28,29 @@ const CountDownTimer: FC<{
     }
 
     return timeLeft;
-  };
+  }, []);
 
-  const [calculatedTimeLeft, setCalculatedTimeLeft] = useState<
-    CalculatedResult | {}
-  >(calculateTimeLeft());
+  const [calculatedTimeLeft, setCalculatedTimeLeft] =
+    useState<CalculatedResult>();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const timer = setInterval(() => {
       setCalculatedTimeLeft(calculateTimeLeft());
     }, 1000);
 
-    return () => clearTimeout(timer);
-  });
+    return () => clearInterval(timer);
+  }, []);
 
-  const hmsComponents: ReactNode[] = [];
-
-  Object.keys(calculatedTimeLeft).forEach(_interval => {
-    const interval = _interval as keyof CalculatedResult;
-
-    if (!(calculatedTimeLeft as CalculatedResult)[interval]) {
-      return;
-    }
-
-    hmsComponents.push(
-      <>
-        {(calculatedTimeLeft as CalculatedResult)[interval]
-          .toString()
-          .padStart(2, '0')}
-      </>,
-    );
-  });
-
-  return hmsComponents.length > 1 ? (
-    hmsComponents.map((n, i) => (
-      <>
-        {i > 0 ? ':' : ''}
-        {n}
-      </>
-    ))
-  ) : hmsComponents.length ? (
-    <>0:{hmsComponents[0]}</>
-  ) : (
-    <>0:00</>
+  return (
+    <>
+      {calculatedTimeLeft
+        ? `${calculatedTimeLeft.minutes
+            .toString()
+            .padStart(2, '0')}:${calculatedTimeLeft.seconds
+            .toString()
+            .padStart(2, '0')}`
+        : '00:00'}
+    </>
   );
 };
 

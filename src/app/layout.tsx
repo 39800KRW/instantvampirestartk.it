@@ -1,9 +1,11 @@
-import ThemeWrapper from '@/wrappers/ThemeWrapper';
-import type { Metadata } from 'next';
-import 'normalize.css/normalize.css';
+import 'material-icons/iconfont/material-icons.css';
+import './global.css';
 
-import { CircularProgress, Stack, Typography } from '@mui/joy';
-import { Suspense } from 'react';
+import type { Metadata } from 'next';
+
+import Providers from '@/app/Providers';
+import localFont from 'next/font/local';
+import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: 'INSTANT Vampire†StartKit™',
@@ -12,43 +14,29 @@ export const metadata: Metadata = {
   viewport: 'initial-scale=1, width=device-width',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const gmarketSans = localFont({
+  src: [
+    {
+      path: '../../public/assets/fonts/GmarketSansOTF/GmarketSansLight.woff2',
+      weight: '300',
+    },
+    {
+      path: '../../public/assets/fonts/GmarketSansOTF/GmarketSansMedium.woff2',
+      weight: '400',
+    },
+    {
+      path: '../../public/assets/fonts/GmarketSansOTF/GmarketSansBold.woff2',
+      weight: '700',
+    },
+  ],
+  variable: '--font-gmarket-sans',
+});
+
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="ko">
+    <html lang="ko" className={`dark bg-black ${gmarketSans.className}`}>
       <body>
-        <ThemeWrapper>
-          <Suspense
-            fallback={
-              <div>
-                <style>{`
-                  @media screen and (prefer-color-scheme: dark) {
-                      html, body {
-                          background: #000;        
-                      }
-                  }
-              `}</style>
-                <Stack
-                  justifyContent="center"
-                  alignItems="center"
-                  sx={{ height: '100dvh' }}>
-                  <Stack
-                    direction="column"
-                    justifyContent="center"
-                    alignItems="center"
-                    gap={2}>
-                    <CircularProgress size="lg" color="danger" />
-                    <Typography level="body-md">모델 불러오는 중...</Typography>
-                  </Stack>
-                </Stack>
-              </div>
-            }>
-            {children}
-          </Suspense>
-        </ThemeWrapper>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
