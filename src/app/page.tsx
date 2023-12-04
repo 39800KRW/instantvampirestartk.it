@@ -10,7 +10,7 @@ import ProductExplain from "@/components/ProductExplain";
 import OutOfStockAlert from "@/components/OutOfStockAlert";
 import ProductInfo from "@/components/ProductInfo";
 import PhoneNumber from "@/components/PhoneNumber";
-import { AddShoppingCart } from "@mui/icons-material";
+import { AddShoppingCart, Copyright } from "@mui/icons-material";
 import { useRouter } from "next/navigation";
 
 const Model = (props: ThreeElements['mesh']) => {
@@ -38,7 +38,7 @@ export default function Home() {
     }
   
     return <>
-        <Canvas style={{ zIndex: 0, position: 'absolute', top: 0, left: 0, width: '100dvw', height: '100dvh' }}>
+        <Canvas style={{ cursor: 'grab', zIndex: 0, position: 'absolute', top: 0, left: 0, width: '100dvw', height: '100dvh' }}>
             <Suspense fallback={null}>
                 <ambientLight intensity={5} />
                 <pointLight position={[0, 0, 0]} />
@@ -62,20 +62,19 @@ export default function Home() {
             
             {/* 바텀 ㄱ */}
             <Stack sx={{ position: 'absolute', bottom: 0 }}>
-                <Sheet variant="soft" sx={{ width: '100dvw', padding: '.5rem' }}>
+                <Sheet variant="soft" sx={{ width: '100dvw', padding: '.5rem 1.5rem' }}>
                     <Stack direction="row" justifyContent="space-between">
                         <Stack direction="row" alignItems="center">
                                 <Stack direction="row" gap={4} alignItems="center">
-                                    <Stack />
                                     <Stack direction="row" alignItems="center" gap={4}>
                                       <PhoneNumber title="자동주문" number="070-100-5628" />
                                       <PhoneNumber title="상담원" number="070-397-9903" />
                                     </Stack>
                                     
-                                    <Typography>필수 영양소 다량 함유, 철분 다량 함유, 딸기향 합성착향료 함유</Typography>
+                                    <Typography sx={{ flexGrow: 1, overflow: 'hidden', textOverflow: 'ellipsis' }}>필수 영양소 다량 함유, 철분 다량 함유, 딸기향 합성착향료 함유</Typography>
                                 </Stack>
                         </Stack>
-                        <Stack direction="row" alignItems="center" gap={1}>
+                        <Stack direction="row" alignItems="center" gap={1} sx={{ flexShrink: 0 }}>
                             <Typography>방송 종료</Typography>
                             <CircularProgress size="sm" color="danger" />
                             <Typography>00:00</Typography>
@@ -85,8 +84,8 @@ export default function Home() {
             </Stack>
             
             {/* 구매하기 */}
-            <Stack direction="row" gap={2} sx={{position: 'absolute', bottom: '3.5rem', right: '.5rem' }}>
-              <Button color="neutral" onClick={() => router.push('/acknowledgement')}>&copy;</Button>
+            <Stack direction="row" gap={2} sx={{position: 'absolute', bottom: '3.5rem', right: '1rem' }}>
+              <Button color="neutral" onClick={() => router.push('/acknowledgement')}><Copyright /></Button>
               <Button color="danger" onClick={() => purchase()} startDecorator={<AddShoppingCart />}>
                 구매하기
               </Button>
