@@ -11,6 +11,7 @@ import OutOfStockAlert from "@/components/OutOfStockAlert";
 import ProductInfo from "@/components/ProductInfo";
 import PhoneNumber from "@/components/PhoneNumber";
 import { AddShoppingCart } from "@mui/icons-material";
+import { useRouter } from "next/navigation";
 
 const Model = (props: ThreeElements['mesh']) => {
     // This reference gives us direct access to the THREE.Mesh object
@@ -28,6 +29,8 @@ const Model = (props: ThreeElements['mesh']) => {
 }
 
 export default function Home() {
+    const router = useRouter();
+
     const purchase = () => {
       if (typeof window !== 'undefined') {
         location.href = 'https://store.steampowered.com/app/2325460/EZ2ON_REBOOT__R__ENDLESS_CIRCULATION/';
@@ -83,6 +86,7 @@ export default function Home() {
             
             {/* 구매하기 */}
             <Stack direction="row" gap={2} sx={{position: 'absolute', bottom: '3.5rem', right: '.5rem' }}>
+              <Button color="neutral" onClick={() => router.push('/acknowledgement')}>&copy;</Button>
               <Button color="danger" onClick={() => purchase()} startDecorator={<AddShoppingCart />}>
                 구매하기
               </Button>
