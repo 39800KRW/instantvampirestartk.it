@@ -1,4 +1,3 @@
-import { Sheet, Stack, Typography } from '@mui/joy';
 import { FC, ReactNode } from 'react';
 
 const LongShadowMe: FC<{
@@ -15,26 +14,16 @@ const LongShadowMe: FC<{
 
 export default function OutOfStockAlert() {
   return (
-    <Sheet
-      variant="soft"
-      color="danger"
-      sx={{ padding: '.5rem', flexGrow: 1, overflow: 'hidden' }}>
-      <Stack
-        direction="column"
-        alignItems="end"
-        justifyContent="center"
-        sx={{ height: '100%' }}>
+    <div className="p-1 flex-grow overflow-hidden bg-red-300 text-[5rem]">
+      <div className="flex flex-col items-end justify-center h-full pr-5">
         <LongShadowMe>
-          <Typography sx={{ fontSize: '3rem' }} color="danger" level="h2">
-            매진&nbsp;
-          </Typography>
+          <h2 className="text-[5rem] font-bold leading-tight">
+            매진
+            <br />
+            임박<span className="italic">!</span>
+          </h2>
         </LongShadowMe>
-        <LongShadowMe>
-          <Typography sx={{ fontSize: '3rem' }} color="danger" level="h2">
-            임박!
-          </Typography>
-        </LongShadowMe>
-      </Stack>
-    </Sheet>
+      </div>
+    </div>
   );
 }
