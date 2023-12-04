@@ -38,7 +38,7 @@ export default function Home() {
               <PhoneNumber title="자동주문" number="070-100-5628" />
               <PhoneNumber title="상담원" number="070-397-9903" />
             </div>
-            <div className="hidden lg:flex flex-1 whitespace-nowrap text-ellipsis overflow-hidden mx-1 marquee grow">
+            <div className="hidden xl:flex flex-1 whitespace-nowrap text-ellipsis overflow-hidden mx-1 marquee grow">
               <span className="marquee-content">
                 필수 영양소 다량 함유, 철분 다량 함유, 딸기향 합성착향료 함유
               </span>
@@ -59,7 +59,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="hidden xl:flex font-light gap-4 w-[500px] text-sm absolute bottom-14 right-0 px-4 py-1.5 bg-zinc-700 text-white items-center">
+      <div className="hidden md:flex font-light gap-4 w-[450px] text-sm absolute bottom-14 right-0 px-4 py-1.5 bg-zinc-700 text-white items-center">
         <span className="material-icons-outlined text-sm">warning</span>
         <div className="w-full marquee">
           <span className="marquee-content">
