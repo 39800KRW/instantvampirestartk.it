@@ -1,9 +1,11 @@
+import './global.css';
+
 import ThemeWrapper from '@/wrappers/ThemeWrapper';
 import type { Metadata } from 'next';
 import 'normalize.css/normalize.css';
 
 import { CircularProgress, Stack, Typography } from '@mui/joy';
-import { Suspense } from 'react';
+import { ReactNode, Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'INSTANT Vampire†StartKit™',
@@ -12,25 +14,14 @@ export const metadata: Metadata = {
   viewport: 'initial-scale=1, width=device-width',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="ko">
+    <html lang="ko" className="dark bg-black">
       <body>
         <ThemeWrapper>
           <Suspense
             fallback={
               <div>
-                <style>{`
-                  @media screen and (prefer-color-scheme: dark) {
-                      html, body {
-                          background: #000;        
-                      }
-                  }
-              `}</style>
                 <Stack
                   justifyContent="center"
                   alignItems="center"
