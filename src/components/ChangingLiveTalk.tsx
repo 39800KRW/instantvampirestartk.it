@@ -18,19 +18,8 @@ export default function ChangingLiveTalk() {
       );
     }
 
-    return () => {
-      if (intervalId) {
-        console.log('clear triggered');
-        clearInterval(intervalId);
-      }
-    };
+    return () => {};
   });
-
-  const increaseOne = async () => {
-    const newIdx = (liveChatIdx + 1) % LiveChatData.length;
-    setLiveChatIdx(newIdx);
-    console.log('update triggered', newIdx);
-  };
 
   return (
     <LiveTalk
