@@ -79,6 +79,13 @@ export default function Home() {
         <Button
           as={Link}
           target={'_blank'}
+          href="https://www.youtube.com/watch?v=F3uNPW4k_ls"
+          color="secondary">
+          <span className="material-icons-outlined">movie</span>
+        </Button>
+        <Button
+          as={Link}
+          target={'_blank'}
           href="https://store.steampowered.com/app/2325460/EZ2ON_REBOOT__R__ENDLESS_CIRCULATION/"
           color="danger">
           <span className="material-icons-outlined">add_shopping_cart</span>
