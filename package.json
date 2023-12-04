@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.19",
     "@mui/joy": "^5.0.0-beta.16",
+    "@mui/material": "^5.14.19",
     "@react-three/drei": "^9.89.3",
     "@react-three/fiber": "^8.15.12",
     "next": "14.0.3",

@@ -1,6 +1,6 @@
 'use client';
 
-import { Chip, CircularProgress, Sheet, Stack, Typography } from "@mui/joy"
+import { Chip, Button, CircularProgress, Sheet, Stack, Typography } from "@mui/joy"
 import { Canvas, ThreeElements, useFrame } from "@react-three/fiber";
 import { FC, ReactNode, Suspense, useRef } from "react";
 import { useGLTF, OrbitControls } from '@react-three/drei';
@@ -10,6 +10,7 @@ import ProductExplain from "@/components/ProductExplain";
 import OutOfStockAlert from "@/components/OutOfStockAlert";
 import ProductInfo from "@/components/ProductInfo";
 import PhoneNumber from "@/components/PhoneNumber";
+import { AddShoppingCart } from "@mui/icons-material";
 
 const Model = (props: ThreeElements['mesh']) => {
     // This reference gives us direct access to the THREE.Mesh object
@@ -27,6 +28,12 @@ const Model = (props: ThreeElements['mesh']) => {
 }
 
 export default () => {
+    const purchase = () => {
+      if (typeof window !== 'undefined') {
+        location.href = 'https://store.steampowered.com/app/2325460/EZ2ON_REBOOT__R__ENDLESS_CIRCULATION/';
+      }
+    }
+  
     return <>
         <Canvas style={{ zIndex: 0, position: 'absolute', top: 0, left: 0, width: '100dvw', height: '100dvh' }}>
             <Suspense fallback={null}>
@@ -67,11 +74,18 @@ export default () => {
                         </Stack>
                         <Stack direction="row" alignItems="center" gap={1}>
                             <Typography>방송 종료</Typography>
-                            <CircularProgress size="sm" />
+                            <CircularProgress size="sm" color="danger" />
                             <Typography>00:00</Typography>
                         </Stack>
                     </Stack>
                 </Sheet>
+            </Stack>
+            
+            {/* 구매하기 */}
+            <Stack direction="row" gap={2} sx={{position: 'absolute', bottom: '3.5rem', right: '.5rem' }}>
+              <Button color="danger" onClick={() => purchase()} startDecorator={<AddShoppingCart />}>
+                구매하기
+              </Button>
             </Stack>
         </div>
     </>
