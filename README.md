@@ -14,7 +14,6 @@ TypeScript와 기본적인 GitHub를 쓸 줄 안다면, [`./src/data/LiveChatDat
 
 ## License
 
-`/public/assets/bloodpack_converted-v1.glb`에 있는 혈액팩 3D 모델의 경우 원본 배포 라이선스에 따라 CC-BY 4.0 라이선스로
-배포됩니다. [모델 소스](https://sketchfab.com/3d-models/blood-pack-low-poly-pbr-e8122f4880df4286baa08ca79eae1253)  
+`/public/assets/bloodpack_converted-v1.glb`에 있는 혈액팩 3D 모델의 원본의 경우 CC-BY 4.0 라이선스로 배포되고 있습니다. [모델 소스](https://sketchfab.com/3d-models/blood-pack-low-poly-pbr-e8122f4880df4286baa08ca79eae1253)  
 `/public/assets/fonts/GmarketSansOTF`에 있는 Gmarket Sans 폰트의 경우 원본 배포 라이선스를 따릅니다. [폰트 배포 정보](https://corp.gmarket.com/fonts/)  
 이 외의 소스코드는 [MIT License](LICENSE) 로 배포됩니다.
