@@ -9,17 +9,22 @@ export default function ChangingLiveTalk() {
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout>();
 
   useEffect(() => {
-    if (!intervalId) {
-      setIntervalId(
-        setInterval(
-          () => setLiveChatIdx(prevIdx => (prevIdx + 1) % LiveChatData.length),
-          5000,
-        ),
-      );
+    // Clear existing interval if any
+    if (intervalId) {
+      clearInterval(intervalId);
     }
 
-    return () => {};
-  });
+    // Set a new interval
+    const newIntervalId = setInterval(
+      () => setLiveChatIdx(prevIdx => (prevIdx + 1) % LiveChatData.length),
+      5000,
+    );
+    setIntervalId(newIntervalId);
+
+    return () => {
+      clearInterval(newIntervalId);
+    };
+  }, []);
 
   return (
     <LiveTalk
