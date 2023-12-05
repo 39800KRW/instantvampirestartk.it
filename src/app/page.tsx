@@ -9,7 +9,7 @@ import { Button, ButtonGroup } from '@nextui-org/button';
 import { Link } from '@nextui-org/link';
 
 export default function Home() {
-  const target = new Date(new Date().setMinutes(new Date().getMinutes() + 5));
+  const target = new Date(new Date().setMinutes(new Date().getMinutes() + 60));
 
   return (
     <>
