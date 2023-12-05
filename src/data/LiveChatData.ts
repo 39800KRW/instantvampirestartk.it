@@ -18,7 +18,7 @@ const LiveChatData: LiveChatDataInterface[] = [
   },
   {
     phone: '93**',
-    message: '전재산을 털어서 샀어요^^ 가격대비 맛이 좋아요'
+    message: '전재산을 털어서 샀어요^^ 가격대비 맛이 좋아요',
   },
 ];
 
