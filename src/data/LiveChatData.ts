@@ -20,6 +20,12 @@ const LiveChatData: LiveChatDataInterface[] = [
     phone: '93**',
     message: '전재산을 털어서 샀어요^^ 가격대비 맛이 좋아요',
   },
+
+  // 김편집 방문 이후 추가 (12-05)
+  {
+    phone: '43**',
+    message: '편문철TV 안녕하세요 V^^V',
+  },
 ];
 
 export default LiveChatData;
