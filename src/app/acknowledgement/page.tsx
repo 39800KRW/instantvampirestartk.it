@@ -26,6 +26,10 @@ export default function Acknowledgement() {
           <Link href={'https://corp.gmarket.com/fonts/'}>웹페이지</Link>
         </div>
       </div>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `<!-- https://github.com/39800KRW/instantvampirestartk.it -->`,
+        }}></div>
     </div>
   );
 }
