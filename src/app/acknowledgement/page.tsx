@@ -25,10 +25,19 @@ export default function Acknowledgement() {
           <p className={''}></p>
           <Link href={'https://corp.gmarket.com/fonts/'}>웹페이지</Link>
         </div>
+
+        <div className={'flex align-baseline gap-1'}>
+          <p className={'font-semibold'}>오픈소스 소프트웨어</p>
+          <p>본 사이트에서 사용된 오픈소스 소프트웨어와 소스코드는</p>
+          <Link href={'https://github.com/39800KRW/instantvampirestartk.it'}>GitHub 레포지토리</Link>
+          <p>에서 확인 가능합니다.</p>
+        </div>
+
+        
       </div>
       <div
         dangerouslySetInnerHTML={{
-          __html: `<!-- https://github.com/39800KRW/instantvampirestartk.it -->`,
+          __html: `<!-- https://github.com/39800KRW/instantvampirestartk.it (에헤이 이스터에그 조졌네 이거) -->`,
         }}></div>
     </div>
   );
