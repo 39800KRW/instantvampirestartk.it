@@ -7,8 +7,7 @@ EZ2ON Endless Circulation DLC 에 나온 약한듯한 BGA 를 웹으로 구현�
 
 ## Testimonials
 * 김편집 (ARPA): [ㅎㅎㅎㅎㅎㅎㅎ](https://www.youtube.com/watch?v=mSr8D_dBzBc&t=1h43m30s)
-* 레밀리아 (풀영상 대기중 (12월 06일 새벽방송))
-
+* 레밀리아: [이거 뭔데? 무슨 사이튼데?](https://www.youtube.com/watch?v=4geqqJTGT3M&t=2h54m30s)
 ## LiveChat
 웹사이트의 소스코드를 찾으신 당신에게 드리는 이벤트~
 
