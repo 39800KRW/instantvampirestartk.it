@@ -72,7 +72,7 @@ export default function Home() {
           target={'_blank'}
           href={'/acknowledgement'}
           color="primary">
-          <span className="material-icons-outlined">pie_chart</span>
+          <span>&copy;</span>
         </Button>
         <Button
           as={Link}
