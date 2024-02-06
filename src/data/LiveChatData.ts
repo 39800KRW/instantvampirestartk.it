@@ -27,6 +27,7 @@ const LiveChatData: LiveChatDataInterface[] = [
     message: '편문철TV 안녕하세요 V^^V',
   },
 
+  // Pull Request #4 - sjkim04
   {
     phone: '2015',
     message: '다음은 누구지?',
@@ -34,7 +35,7 @@ const LiveChatData: LiveChatDataInterface[] = [
   {
     phone: '398*',
     message: '4만원보다 덜하는 금액, 너무 파격적인데요?',
-  }
+  },
 ];
 
 export default LiveChatData;
