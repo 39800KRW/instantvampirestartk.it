@@ -36,6 +36,11 @@ const LiveChatData: LiveChatDataInterface[] = [
     phone: '398*',
     message: '4만원보다 덜하는 금액, 너무 파격적인데요?',
   },
+
+  {
+    phone: '34**',
+    message: '이걸 먹고 펭귄이 하늘을 날았습니다',
+  },
 ];
 
 export default LiveChatData;
