@@ -25,6 +25,6 @@
 }
 
 @keyframes shortmarquee {
-    from { transform: translateX(-25%); }
-    to { transform: translateX(-75%); }
+    from { transform: translateX(calc(0 - min(25%, 144px))); }
+    to { transform: translateX(calc(100% - min(25%, 144px))); }
 }
