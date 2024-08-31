@@ -13,8 +13,10 @@ const LiveTalk: FC<LiveChatDataInterface> = ({ phone, message }) => {
         </span>
         <div className="flex flex-row gap-1">
           <span className="text-zinc-400 font-semibold">{phone}</span>
-          <div className="w-full overflow-hidden text-ellipsis break-keep whitespace-pre">
-            <span className={shouldMarquee ? 'shortmarquee-content' : ''}>
+          <div className="w-full marquee text-ellipsis break-keep">
+            <span
+              key={message}
+              className={shouldMarquee ? 'shortmarquee-content' : ''}>
               {message}
             </span>
           </div>
