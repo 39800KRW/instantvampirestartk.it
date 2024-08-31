@@ -48,8 +48,8 @@ const LiveChatData: LiveChatDataInterface[] = [
   },
   {
     phone: '32**',
-    message: '구입했더니 총든 수녀님이 찾아와요'
-  }
+    message: '모조피를 마셨더니 총든 수녀님이 저를 쐈어요',
+  },
 ];
 
 export default LiveChatData;
