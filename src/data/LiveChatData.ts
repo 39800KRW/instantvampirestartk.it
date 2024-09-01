@@ -46,6 +46,10 @@ const LiveChatData: LiveChatDataInterface[] = [
     message:
       '젠장, 또 모조피야. 이 것만 사고 가려고 했는데, 모조피를 보고 말았어. 이제 나는 구매해야만 해... 구매를 시작하면 지갑이 확 죽어 버릴 걸 알면서도, 나는 구매해야만 해. 그것이 뱀파이어를 목도한 자의 사명이다. 자, 구매를 시작하겠어.',
   },
+  {
+    phone: '32**',
+    message: '모조피를 마셨더니 총든 수녀님이 저를 쐈어요',
+  },
 ];
 
 export default LiveChatData;
