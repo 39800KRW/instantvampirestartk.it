@@ -84,7 +84,7 @@ export default function Home() {
         <Button
           as={Link}
           target={'_blank'}
-          href="https://store.steampowered.com/app/2325460/EZ2ON_REBOOT__R__ENDLESS_CIRCULATION/"
+          href="/buy"
           color="danger">
           <span className="material-icons-outlined">add_shopping_cart</span>
           구매하기
