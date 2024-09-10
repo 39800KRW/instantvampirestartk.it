@@ -81,11 +81,7 @@ export default function Home() {
           color="secondary">
           <span className="material-icons-outlined">movie</span>
         </Button>
-        <Button
-          as={Link}
-          target={'_blank'}
-          href="/buy"
-          color="danger">
+        <Button as={Link} target={'_blank'} href="/buy" color="danger">
           <span className="material-icons-outlined">add_shopping_cart</span>
           구매하기
         </Button>
