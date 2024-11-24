@@ -57,7 +57,7 @@ const LiveChatData: LiveChatDataInterface[] = [
   },
   {
     phone: '80**',
-    message: '갈증날떄 한 팩 마시면 너무 행복합니다',
+    message: '갈증날떄 하나씩 마시면 너무 행복합니다',
   },
   {
     phone: '7***',
