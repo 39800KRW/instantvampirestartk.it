@@ -50,6 +50,19 @@ const LiveChatData: LiveChatDataInterface[] = [
     phone: '32**',
     message: '모조피를 마셨더니 총든 수녀님이 저를 쐈어요',
   },
+
+  {
+    phone: '120*',
+    message: '아이들 먹기에도 맛이 나쁘지 않고 잘 먹어요 ^^',
+  },
+  {
+    phone: '80**',
+    message: '갈증날떄 한 팩 마시면 너무 행복합니다',
+  },
+  {
+    phone: '7***',
+    message: '목이 칼칼하고 가래가 끊이지 않을 때 데워서 먹으면 너무 좋아요',
+  },
 ];
 
 export default LiveChatData;
