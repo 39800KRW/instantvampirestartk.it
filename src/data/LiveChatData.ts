@@ -63,6 +63,10 @@ const LiveChatData: LiveChatDataInterface[] = [
     phone: '7***',
     message: '목이 칼칼하고 가래가 끊이지 않을 때 데워서 먹으면 너무 좋아요',
   },
+  {
+    phone: '73**',
+    message: '저희 집 강아지도 좋아하네요',
+  },
 ];
 
 export default LiveChatData;
