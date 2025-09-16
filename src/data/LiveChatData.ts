@@ -67,10 +67,13 @@ const LiveChatData: LiveChatDataInterface[] = [
     phone: '73**',
     message: '저희 집 강아지도 좋아하네요',
   },
-
   {
     phone: '1***',
     message: '추석선물로 한 박스 주문했어요 ㅎㅎ',
+  },
+  {
+    phone: '69**',
+    message: '마법소녀분의 블로그 후기 보고 구매해봤어요 ㅎㅎ 약간 메테오같은 특유의 스모키한 향이 느껴지네요',
   },
 ];
 
