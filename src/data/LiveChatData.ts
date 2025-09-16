@@ -73,7 +73,8 @@ const LiveChatData: LiveChatDataInterface[] = [
   },
   {
     phone: '69**',
-    message: '마법소녀분의 블로그 후기 보고 구매해봤어요 ㅎㅎ 약간 메테오같은 특유의 스모키한 향이 느껴지네요',
+    message:
+      '마법소녀분의 블로그 후기 보고 구매해봤어요 ㅎㅎ 약간 메테오같은 특유의 스모키한 향이 느껴지네요',
   },
 ];
 
